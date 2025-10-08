@@ -3,7 +3,7 @@
 export PORT=${PORT:-8080}
 
 # Create nginx config with the PORT variable substituted
-cat > /etc/nginx/conf.d/default.conf <<EOF
+cat > /etc/nginx/conf.d/default.conf << 'EOFCONF'
 server {
     listen ${PORT};
     server_name _;
@@ -23,10 +23,14 @@ server {
     gzip_types text/plain text/css text/xml text/javascript application/javascript application/xml+rss application/json;
 
     location / {
-        try_files \$uri \$uri/ =404;
+        try_files $uri $uri/ =404;
     }
 }
-EOF
+EOFCONF
+
+# Substitute the PORT variable in the config
+envsubst '${PORT}' < /etc/nginx/conf.d/default.conf > /tmp/default.conf
+mv /tmp/default.conf /etc/nginx/conf.d/default.conf
 
 # Start nginx
 exec nginx -g 'daemon off;'
