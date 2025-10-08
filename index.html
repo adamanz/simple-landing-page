@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>The Simple Company - Let AI Qualify. Let Reps Close.</title>
+    <title>Collective Consopusness LLC - Custom AI GTM CRM deployments for your funnel</title>
 
     <!-- Alpine.js for reactivity -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -522,12 +522,96 @@
             transform: scale(1);
             opacity: 1;
         }
+        
+        /* Unicorn Studio background */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+        .unicorn-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .unicorn-bg {
+                display: none;
+            }
+        }
+
+        /* Hero Wow Enhancements */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: -20% -10% -10% -10%;
+            background: radial-gradient(60% 60% at 50% 40%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.2) 35%, rgba(232,223,208,0) 70%);
+            filter: blur(10px);
+            z-index: -1;
+            animation: floatGradient 18s ease-in-out infinite alternate;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: -30% -20% -20% -20%;
+            background: conic-gradient(from 180deg at 50% 50%, rgba(0,0,0,0.06), rgba(0,0,0,0) 25%, rgba(0,0,0,0.06) 50%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.06));
+            mix-blend-mode: multiply;
+            z-index: -2;
+            animation: rotateGradient 40s linear infinite;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.75rem;
+            margin-bottom: 1rem;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.5);
+            border: 1px solid rgba(0,0,0,0.1);
+            color: #000;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            backdrop-filter: blur(6px);
+        }
+
+        /* Animated accent for subhead */
+        .hero h1 span {
+            background: linear-gradient(90deg, #111, #666 30%, #111 60%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% 100%;
+            animation: shine 12s linear infinite;
+        }
+
+        @keyframes shine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        @keyframes floatGradient {
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(0, -2%, 0) scale(1.05); }
+        }
+
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .hero::after { display: none; }
+            .eyebrow { font-size: 0.75rem; padding: 0.35rem 0.6rem; }
+        }
     </style>
 </head>
 <body x-data="landingPage()" x-init="init()">
     <nav>
         <div class="logo">
-            <img src="logo.png" alt="The Simple Company">
+            <img src="logo.png" alt="Collective Consopusness LLC">
         </div>
         <a href="javascript:void(0)" class="nav-cta" data-cal-link="team/simple" data-cal-config='{"layout":"month_view"}'>Book a Call</a>
 
@@ -561,112 +645,109 @@
     </script>
 
     <section class="hero" x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
+        <div class="eyebrow fade-in" :class="{'visible': shown}" style="transition-delay: 0.05s">Custom AI GTM CRM</div>
+        <div class="unicorn-bg"
+             data-us-project="YOUR_PROJECT_ID"
+             data-us-scale="1"
+             data-us-dpi="1.5"
+             data-us-lazyload="true"
+             data-us-production="true"
+             data-us-alttext="Decorative hero background from Unicorn Studio"
+             data-us-arialabel="Decorative animated background"
+             aria-hidden="true"></div>
         <h1 :class="{'fade-in visible': shown}" class="fade-in">
-            Let AI Qualify.
-            <span>Let Reps Close.</span>
+            Custom AI GTM CRM deployments
+            <span>for your funnel</span>
         </h1>
         <p class="hero-subtitle fade-in" :class="{'visible': shown}" style="transition-delay: 0.2s">
-            AI agents warm up every lead. Your reps focus on deals that convert.
+            Simpler stack. Clean data. 5–10% revenue lift.
         </p>
         <div class="scroll-hint" x-show="shown" x-transition.duration.1000ms>Scroll to explore ↓</div>
     </section>
 
     <div class="ticker-section">
         <div class="ticker">
-            <span>60-Second Response</span>
-            <span>Lead Qualification</span>
-            <span>Meeting Booking</span>
-            <span>Zero Manual Work</span>
-            <span>24/7 Coverage</span>
-            <span>Pipeline Growth</span>
-            <span>60-Second Response</span>
-            <span>Lead Qualification</span>
-            <span>Meeting Booking</span>
-            <span>Zero Manual Work</span>
-            <span>24/7 Coverage</span>
-            <span>Pipeline Growth</span>
+            <span>Salesforce</span>
+            <span>HubSpot</span>
+            <span>RevOps</span>
+            <span>Lead Routing</span>
+            <span>Forecasting</span>
+            <span>Data Hygiene</span>
+            <span>AI Agents</span>
+            <span>Attribution</span>
+            <span>Salesforce</span>
+            <span>HubSpot</span>
+            <span>RevOps</span>
+            <span>Lead Routing</span>
+            <span>Forecasting</span>
+            <span>Data Hygiene</span>
+            <span>AI Agents</span>
+            <span>Attribution</span>
         </div>
     </div>
 
     <section class="services" id="services">
-        <h2 class="section-title fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">What You Get</h2>
+        <h2 class="section-title fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">What We Do</h2>
         <div class="service-grid">
             <div class="service-card fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
                 <div class="service-number">01</div>
-                <h3>Instant Lead Response</h3>
-                <p>Stop losing deals to competitors who respond faster. AI answers every inquiry in under 60 seconds.</p>
+                <h3>CRM Implementation & RevOps</h3>
+                <p>Salesforce or HubSpot configured to match your GTM motion. Clean data, aligned processes, and automation that sticks.</p>
                 <ul class="service-details">
-                    <li>Captures leads from any source</li>
-                    <li>Responds via SMS, email, or chat</li>
-                    <li>Asks qualifying questions automatically</li>
-                    <li>Routes hot leads to your team instantly</li>
+                    <li>Salesforce/HubSpot implementations & migrations</li>
+                    <li>Lead lifecycle, routing, and SLA design</li>
+                    <li>Sales/CS playbooks and workflow automation</li>
+                    <li>Data model, validation rules, and hygiene</li>
                 </ul>
-                <div class="service-price">$4,500 | Live in 3 days</div>
+                <div class="service-price">$12,000+ | 2–6 weeks</div>
             </div>
 
             <div class="service-card fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element" style="transition-delay: 0.1s">
                 <div class="service-number">02</div>
-                <h3>Smart Lead Qualification</h3>
-                <p>Your AI agent knows what questions to ask. Only qualified prospects reach your calendar.</p>
+                <h3>AI GTM Agents & Automations</h3>
+                <p>Agentic AI across inbound and outbound to accelerate pipeline—embedded into your CRM and channels.</p>
                 <ul class="service-details">
-                    <li>Learns from your best deals</li>
-                    <li>Scores leads based on intent & fit</li>
-                    <li>Disqualifies tire-kickers politely</li>
-                    <li>Books meetings with decision-makers only</li>
+                    <li>Speed-to-lead agents for inbound capture</li>
+                    <li>Personalized outbound sequences at scale</li>
+                    <li>Call/email summaries auto-logged to CRM</li>
+                    <li>Enrichment, scoring, and next-best action</li>
                 </ul>
-                <div class="service-price">$5,500 | Live in 5 days</div>
+                <div class="service-price">$8,500+ | 1–3 weeks</div>
             </div>
 
             <div class="service-card fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element" style="transition-delay: 0.2s">
                 <div class="service-number">03</div>
-                <h3>24/7 Pipeline Builder</h3>
-                <p>Never miss another lead. Your AI works nights, weekends, and holidays—no vacations, no sick days.</p>
+                <h3>Data & Reporting for GTM</h3>
+                <p>Unify data and unlock clarity with reliable dashboards and alerts that drive action.</p>
                 <ul class="service-details">
-                    <li>Handles unlimited conversations simultaneously</li>
-                    <li>Follows up persistently (but not annoyingly)</li>
-                    <li>Updates your CRM automatically</li>
-                    <li>Reports every morning on new opportunities</li>
+                    <li>Pipeline and forecast accuracy dashboards</li>
+                    <li>Attribution, cohorts, and lifecycle analytics</li>
+                    <li>RevOps scorecards with real-time alerts</li>
+                    <li>Warehouse/BI integrations (GA4, BigQuery, Looker)</li>
                 </ul>
-                <div class="service-price">$6,500 | Full system</div>
+                <div class="service-price">$7,500+ | 1–3 weeks</div>
             </div>
         </div>
     </section>
 
     <section class="proof" id="proof">
-        <h2 class="section-title fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">Real Impact, Not Hype</h2>
+        <h2 class="section-title fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">The Outcome GTM Teams Care About</h2>
         <div class="proof-grid">
             <div class="proof-stat scale-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
-                <div class="proof-stat-number">7%</div>
-                <div class="proof-stat-label">average revenue increase per deal</div>
-            </div>
-            <div class="proof-stat scale-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element" style="transition-delay: 0.1s">
-                <div class="proof-stat-number">4x</div>
-                <div class="proof-stat-label">more deals closed with instant follow-up</div>
-            </div>
-            <div class="proof-stat scale-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element" style="transition-delay: 0.2s">
-                <div class="proof-stat-number">91%</div>
-                <div class="proof-stat-label">higher retention with omnichannel engagement</div>
-            </div>
-            <div class="proof-stat scale-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element" style="transition-delay: 0.3s">
-                <div class="proof-stat-number">60s</div>
-                <div class="proof-stat-label">response time wins 78% of deals</div>
+                <div class="proof-stat-number">5–10%</div>
+                <div class="proof-stat-label">revenue lift from faster, event-triggered follow-up using website and CRM signals</div>
             </div>
         </div>
     </section>
 
     <section class="cta-section" id="contact">
-        <h2>Stop Losing Leads to Slow Responses</h2>
-        <p>Your competitors respond in minutes. You'll respond in seconds. See live demos in our first call.</p>
-        <a href="javascript:void(0)" class="cta-button" data-cal-link="team/simple" data-cal-config='{"layout":"month_view"}'>Book Demo Call</a>
+        <h2>Build a CRM + AI stack that accelerates GTM</h2>
+        <p>In 30 minutes, we’ll map your bottlenecks and outline a CRM/AI roadmap tailored to your team.</p>
+        <a href="javascript:void(0)" class="cta-button" data-cal-link="team/simple" data-cal-config='{"layout":"month_view"}'>Book Consultation</a>
     </section>
 
     <footer>
-        <div>
-            <a href="https://github.com/adamanz" target="_blank">GitHub</a>
-            <a href="https://twitter.com/adamanz" target="_blank">Twitter</a>
-            <a href="mailto:adam@simple.company">Contact</a>
-        </div>
-        <p style="margin-top: 1rem;">&copy; 2025 The Simple Company. AI that delivers results, not complexity.</p>
+        <p style="margin-top: 1rem;">&copy; 2025 Collective Consopusness LLC. Custom AI GTM CRM deployments for your funnel.</p>
     </footer>
 
     <script>
@@ -732,6 +813,22 @@
         if (ticker) {
             ticker.innerHTML += ticker.innerHTML;
         }
+    </script>
+    <script>
+    !function(){
+        if(!window.UnicornStudio){
+            window.UnicornStudio={isInitialized:false};
+            var s=document.createElement("script");
+            s.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.33/dist/unicornStudio.umd.js";
+            s.onload=function(){
+                if(!window.UnicornStudio.isInitialized){
+                    UnicornStudio.init();
+                    window.UnicornStudio.isInitialized=true;
+                }
+            };
+            (document.head||document.body).appendChild(s);
+        }
+    }();
     </script>
 </body>
 </html>
