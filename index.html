@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>The Simple Company - Let AI Qualify. Let Reps Close.</title>
     <style>
         * {
@@ -24,7 +24,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1.5rem 3rem;
+            padding: 1rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -40,7 +40,7 @@
         }
 
         .logo img {
-            height: 50px;
+            height: 45px;
             width: auto;
             display: block;
         }
@@ -123,7 +123,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
             gap: 2rem;
         }
 
@@ -216,7 +216,7 @@
             max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
             gap: 3rem;
             text-align: center;
         }
@@ -296,21 +296,138 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             nav {
-                padding: 1rem 1.5rem;
+                padding: 0.75rem 1rem;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+
+            .nav-cta {
+                padding: 0.4rem 1rem;
+                font-size: 0.85rem;
             }
 
             .hero {
-                padding: 6rem 1.5rem 4rem;
+                min-height: 85vh;
+                padding: 5rem 1.5rem 3rem;
             }
 
-            .service-grid,
-            .proof-grid {
+            .hero h1 {
+                font-size: clamp(2rem, 7vw, 3rem);
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .section-title {
+                font-size: clamp(1.75rem, 5vw, 2.5rem);
+                margin-bottom: 3rem;
+            }
+
+            .services {
+                padding: 4rem 1.5rem;
+            }
+
+            .service-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .proof {
+                padding: 4rem 1.5rem;
+            }
+
+            .proof-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .proof-stat {
+                padding: 1rem;
+            }
+
+            .proof-stat-number {
+                font-size: 2rem;
+            }
+
+            .proof-stat-label {
+                font-size: 0.85rem;
             }
 
             .ticker span {
                 font-size: 1rem;
                 padding: 0 2rem;
+            }
+
+            .cta-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .cta-section h2 {
+                font-size: clamp(1.75rem, 5vw, 2.5rem);
+            }
+
+            .cta-section p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem;
+            }
+
+            footer a {
+                margin: 0 0.5rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-details {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Tablet */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            nav {
+                padding: 1rem 2rem;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Large screens */
+        @media (min-width: 1440px) {
+            .hero h1 {
+                font-size: 5.5rem;
+            }
+
+            .service-grid,
+            .proof-grid {
+                max-width: 1400px;
             }
         }
     </style>
@@ -320,8 +437,20 @@
         <div class="logo">
             <img src="logo.png" alt="The Simple Company">
         </div>
-        <a href="#contact" class="nav-cta">Book a Call</a>
+        <a href="javascript:void(0)" class="nav-cta" data-cal-link="team/simple" data-cal-config='{"layout":"month_view"}'>Book a Call</a>
     </nav>
+
+    <!-- Cal.com Embed Script -->
+    <script>
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+
+    // Preload the booking modal
+    Cal("preload", { calLink: "team/simple" });
+
+    // UI trigger for Cal.com embed
+    Cal("ui", {"styles":{"branding":{"brandColor":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
 
     <section class="hero">
         <h1>
@@ -420,7 +549,7 @@
     <section class="cta-section" id="contact">
         <h2>Stop Losing Leads to Slow Responses</h2>
         <p>Your competitors respond in minutes. You'll respond in seconds. See live demos in our first call.</p>
-        <a href="mailto:adam@simple.company?subject=AI Lead Response System Demo" class="cta-button">Book Demo Call</a>
+        <a href="javascript:void(0)" class="cta-button" data-cal-link="team/simple" data-cal-config='{"layout":"month_view"}'>Book Demo Call</a>
     </section>
 
     <footer>
