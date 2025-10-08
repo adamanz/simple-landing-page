@@ -1,7 +1,8 @@
 FROM nginx:alpine
 
-# Copy the HTML file to nginx html directory
+# Copy the HTML file and assets to nginx html directory
 COPY index.html /usr/share/nginx/html/index.html
+COPY logo.png /usr/share/nginx/html/logo.png
 
 # Copy startup script
 COPY start-nginx.sh /start-nginx.sh
