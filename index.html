@@ -80,24 +80,26 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 400;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            max-width: 900px;
+            letter-spacing: -0.02em;
+            line-height: 1.35;
+            max-width: 1400px;
             margin-bottom: 1.5rem;
         }
 
         .hero h1 span {
-            display: block;
             color: #666;
+            font-size: 1em;
+            margin-top: 0;
         }
 
         .hero-subtitle {
-            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-size: clamp(0.95rem, 1.5vw, 1.15rem);
             color: #666;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 3rem;
+            line-height: 1.6;
         }
 
         .scroll-hint {
@@ -323,7 +325,9 @@
             }
 
             .hero h1 {
-                font-size: clamp(2rem, 7vw, 3rem);
+                font-size: clamp(1.5rem, 5.5vw, 2rem);
+                max-width: 100%;
+                line-height: 1.4;
             }
 
             .hero-subtitle {
@@ -650,7 +654,6 @@
     </script>
 
     <section class="hero" x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
-        <div class="eyebrow fade-in" :class="{'visible': shown}" style="transition-delay: 0.05s">Forward‑Deployed</div>
         <div class="unicorn-bg"
              data-us-project="YOUR_PROJECT_ID"
              data-us-scale="1"
@@ -661,12 +664,12 @@
              data-us-arialabel="Decorative animated background"
              aria-hidden="true"></div>
         <h1 :class="{'fade-in visible': shown}" class="fade-in">
-            Forward‑Deployed GTM Engineers
-            <span>who ship CRM + AI that sells</span>
+            Increase your lead conversion by 2x.<br><span style="display: inline;">AI does the qualifying. You do the closing.</span>
         </h1>
         <p class="hero-subtitle fade-in" :class="{'visible': shown}" style="transition-delay: 0.2s">
-            We implement Salesforce/HubSpot, AI agents, and event‑triggered workflows—measurable lift in weeks.
+            We build AI agents that qualify, score, and hand off warm leads, keeping humans where they matter most: connect with clients to close the deal.
         </p>
+        <a href="https://cal.com/team/simple" class="cta-button fade-in" :class="{'visible': shown}" style="transition-delay: 0.3s; margin-top: 2rem;" data-cal-link="team/simple" data-cal-config='{"layout":"month_view"}'>Book a Call</a>
         <div class="scroll-hint" x-show="shown" x-transition.duration.1000ms>Scroll to explore ↓</div>
     </section>
 
@@ -692,45 +695,69 @@
     </div>
 
     <section class="services" id="services">
-        <h2 class="section-title fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">Platform Details</h2>
+        <h2 class="section-title fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">Packages</h2>
         <div class="service-grid">
             <div class="service-card fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
-                <div class="service-number">01</div>
-                <h3>Hands‑On Deployments</h3>
-                <p>We work directly in your stack to implement Salesforce/HubSpot, define event triggers, and wire AI agents—owning the post‑training and post‑setup work end‑to‑end.</p>
+                <div class="service-number">02</div>
+                <h3>Texting Channel Starter Pack</h3>
+                <p style="margin-top: 1rem; font-style: italic; min-height: 3.5em;">Turn conversations into conversions with AI-powered texting.</p>
+
+                <h4 style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 500;">What's included:</h4>
                 <ul class="service-details">
-                    <li>Implementations & migrations (Salesforce/HubSpot)</li>
-                    <li>Lead lifecycle, routing and SLA design</li>
-                    <li>Agents embedded into CRM + channels</li>
-                    <li>Event triggers and async workflows</li>
+                    <li>Text flow audit & design for personalized outreach</li>
+                    <li>Qualifying questions integration to identify high-intent leads</li>
+                    <li>Event triggers to launch the right message at the right moment</li>
+                    <li>Notifications system to alert reps when it's time to jump in</li>
+                    <li>Testing, validation, & deployment for a fully functional AI texting engine</li>
                 </ul>
-                <div class="service-price">$12,000+ | 2–6 weeks</div>
+
+                <p style="margin-top: 1.5rem; font-weight: 500;">Channels Covered:</p>
+                <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Instagram, LinkedIn, Email, Slack, X (Twitter), Facebook, WhatsApp, Telegram</p>
+
+                <p style="margin-top: 1.5rem; font-weight: 500;">Result:</p>
+                <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Conversations turned into conversions with AI-powered texting that never misses a lead.</p>
+
+                <div class="service-price">from $7,997</div>
             </div>
 
             <div class="service-card fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element" style="transition-delay: 0.1s">
-                <div class="service-number">02</div>
-                <h3>Reinforcement Fine‑Tuning</h3>
-                <p>We tune agents to your playbooks—tools, tone, and policies—so they stay reliable in complex multi‑step tasks.</p>
+                <div class="service-number">03</div>
+                <h3>Phone Call Channel Starter Pack</h3>
+                <p style="margin-top: 1rem; font-style: italic; min-height: 3.5em;">Your AI agent books calls, qualifies leads, and never forgets to follow up.</p>
+
+                <h4 style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 500;">What's included:</h4>
                 <ul class="service-details">
-                    <li>Multi‑turn tool use training</li>
-                    <li>Policies, tone, and guardrails</li>
-                    <li>CRM‑grounded context windows</li>
-                    <li>Offline evals and red‑team tests</li>
+                    <li>Voice Cloning (up to 2 voices) using ElevenLabs</li>
+                    <li>Call flow design & scripting</li>
+                    <li>Salesforce integration</li>
+                    <li>Event triggers & notifications for real-time updates</li>
+                    <li>Testing & deployment for high-quality, human-sounding calls</li>
                 </ul>
-                <div class="service-price">$8,500+ | 1–3 weeks</div>
+
+                <p style="margin-top: 1.5rem; font-weight: 500;">Result:</p>
+                <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Accelerate deal flow through always-on AI voice outreach.</p>
+
+                <div class="service-price">from $11,989</div>
             </div>
 
             <div class="service-card fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element" style="transition-delay: 0.2s">
-                <div class="service-number">03</div>
-                <h3>Continuous Improvement</h3>
-                <p>We integrate with your evaluations to monitor performance and auto‑retrain where it matters. Alerts and dashboards keep the loop tight.</p>
+                <div class="service-number">04</div>
+                <h3>Qualifying Agent</h3>
+                <p style="margin-top: 1rem; font-style: italic; min-height: 3.5em;">Your always-on AI Sales agent, qualifying leads before your team steps in.</p>
+
+                <h4 style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 500;">What's included:</h4>
                 <ul class="service-details">
-                    <li>Instrumentation & success metrics</li>
-                    <li>Guardrail & regression tests</li>
-                    <li>Auto‑retraining hooks</li>
-                    <li>Ops dashboard for GTM leaders</li>
+                    <li>AI hosting setup (via Blaxel)</li>
+                    <li>Context upload & prompt design: train your AI on your product and tone</li>
+                    <li>Lead scoring & qualification logic, based on your rules and priorities</li>
+                    <li>Opportunity conversion rules & real-time notifications</li>
+                    <li>Performance dashboard: track results, conversion rates, and response times</li>
                 </ul>
-                <div class="service-price">$7,500+ | 1–3 weeks</div>
+
+                <p style="margin-top: 1.5rem; font-weight: 500;">Result:</p>
+                <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Qualify, score, and route leads so your human team can focus on what they do best: closing deals.</p>
+
+                <div class="service-price">$19,995</div>
             </div>
         </div>
     </section>
