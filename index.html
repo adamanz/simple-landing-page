@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>2x Your Lead Conversion with AI Agents | SIMPLE Co</title>
+    <title>2x lead conversion.</title>
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Increase lead conversion by 2x with AI-powered qualification agents. We build intelligent systems that qualify, score, and hand off warm leads so your team closes more deals.">
@@ -245,7 +245,7 @@
 
         /* Proof Section */
         .proof {
-            padding: 8rem 2rem;
+            padding: 4rem 2rem;
             background: #E8DFD0;
         }
 
@@ -273,6 +273,47 @@
             color: #666;
             font-size: 1rem;
         }
+
+        /* Before/After Table */
+        .before-after {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .table-card {
+            background: rgba(255,255,255,0.4);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .ba-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .ba-table thead th {
+            text-align: left;
+            font-weight: 500;
+            color: #000;
+            background: rgba(255,255,255,0.6);
+        }
+        .ba-table th,
+        .ba-table td {
+            padding: 1.25rem 1.5rem;
+            vertical-align: top;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+        .ba-table thead th,
+        .ba-table tr:first-child td {
+            border-top: none;
+        }
+        .ba-table tbody tr:nth-child(odd) td {
+            background: rgba(255,255,255,0.25);
+        }
+        .ba-table tbody tr:hover td {
+            background: rgba(255,255,255,0.35);
+        }
+        .ba-table .before { color: #666; }
+        .ba-table .after { color: #111; }
 
         /* CTA Section */
         .cta-section {
@@ -384,7 +425,7 @@
             }
 
             .proof {
-                padding: 4rem 1.5rem;
+                padding: 3rem 1.5rem;
             }
 
             .proof-grid {
@@ -425,6 +466,16 @@
                 padding: 1rem 2rem;
                 font-size: 1rem;
             }
+
+            /* Before/After Table - Mobile */
+            .before-after { padding: 0; }
+            .ba-table, .ba-table thead, .ba-table tbody, .ba-table th, .ba-table td, .ba-table tr { display: block; }
+            .ba-table thead { display: none; }
+            .ba-table tr { border-top: 1px solid rgba(0,0,0,0.1); }
+            .ba-table td { position: relative; padding: 0.9rem 1rem 0.9rem 7.5rem; }
+            .ba-table td::before { content: attr(data-label); position: absolute; left: 1rem; top: 0.9rem; font-weight: 500; color: #000; }
+            .ba-table tbody tr:nth-child(odd) td { background: transparent; }
+            .ba-table tbody tr:hover td { background: transparent; }
 
             footer {
                 padding: 2rem 1.5rem;
@@ -733,10 +784,10 @@
              data-us-arialabel="Decorative animated background"
              aria-hidden="true"></div>
         <h1 :class="{'fade-in visible': shown}" class="fade-in">
-            Increase your lead conversion by 2x.<br><span style="display: inline;">AI does the qualifying. You do the closing.</span>
+            2x lead conversion.<br><span style="display: inline;">AI does the qualifying.</span><br><span style="display: inline;">You do the closing.</span>
         </h1>
         <p class="hero-subtitle fade-in" :class="{'visible': shown}" style="transition-delay: 0.2s">
-            We build AI agents that qualify, score, and hand off warm leads, keeping humans where they matter most: connect with clients to close the deal.
+            We build AI agents in SalesForce that qualify, score, and hand off warm leads, keeping humans where they matter most: connect with clients to close the deal.
         </p>
         <a href="https://cal.com/team/simple" class="cta-button fade-in" :class="{'visible': shown}" style="transition-delay: 0.3s; margin-top: 2rem;" data-cal-link="team/simple" data-cal-config='{"layout":"month_view"}'>Book a Call</a>
         <div class="scroll-hint" x-show="shown" x-transition.duration.1000ms>Scroll to explore ↓</div>
@@ -832,25 +883,41 @@
     </section>
 
     <section class="proof" id="proof">
-        <h2 class="section-title fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">Use Cases</h2>
-        <div class="proof-grid">
-            <div class="proof-stat scale-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
-                <div class="proof-stat-number">Data Extraction</div>
-                <div class="proof-stat-label">Schema‑precise capture from forms, emails, and calls straight into CRM objects.</div>
-            </div>
-            <div class="proof-stat scale-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
-                <div class="proof-stat-number">Tool‑Use Agents</div>
-                <div class="proof-stat-label">Agents that reliably act in your stack: qualify, route, write, and log.</div>
-            </div>
-            <div class="proof-stat scale-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
-                <div class="proof-stat-number">Code Generation</div>
-                <div class="proof-stat-label">Accelerate UI and workflow changes with domain‑specific scaffolds.</div>
+        <h2 class="section-title fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">Impact</h2>
+        <div class="before-after fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
+            <div class="table-card">
+                <table class="ba-table" aria-label="Before and After outcomes">
+                    <thead>
+                        <tr>
+                            <th scope="col">Before AI</th>
+                            <th scope="col">After AI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="before" data-label="Before AI">Leads stack up in your inbox and CRM, un-qualified and untouched.</td>
+                            <td class="after" data-label="After AI">Every lead is automatically engaged, qualified, scored and routed by AI agents, ready for your closer to step in.</td>
+                        </tr>
+                        <tr>
+                            <td class="before" data-label="Before">Your team spends their time chasing, following up, clarifying, and routing instead of selling.</td>
+                            <td class="after" data-label="After">Your team spends their time connecting with warm, conversion-ready prospects, not doing busywork.</td>
+                        </tr>
+                        <tr>
+                            <td class="before" data-label="Before">Conversations go cold, opportunities slip, your pipeline lacks velocity.</td>
+                            <td class="after" data-label="After">Deal flow accelerates, pipeline fills faster, and your revenue engine hums.</td>
+                        </tr>
+                        <tr>
+                            <td class="before" data-label="Before">Data lives in silos, integrations are half-done, and the human touch gets buried in manual work.</td>
+                            <td class="after" data-label="After">Your tech stack talks, your data is clean, and your sales process scales with clarity and ease.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
     <section class="cta-section" id="contact">
-        <h2>Build a CRM + AI stack that accelerates GTM</h2>
+        <h2>Build a Salesforce + AI Solution accelerates Revenue</h2>
         <p>In 30 minutes, we’ll map your bottlenecks and outline a CRM/AI roadmap tailored to your team.</p>
         <a href="https://cal.com/team/simple" class="cta-button" data-cal-link="team/simple" data-cal-config='{"layout":"month_view"}'>Book Consultation</a>
     </section>
