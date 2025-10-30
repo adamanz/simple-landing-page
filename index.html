@@ -7,7 +7,7 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Increase lead conversion by 2x with AI-powered qualification agents. We build intelligent systems that qualify, score, and hand off warm leads so your team closes more deals.">
-    <meta name="keywords" content="AI sales agents, lead qualification, CRM automation, AI texting, voice AI, lead conversion, sales automation, Salesforce integration, HubSpot automation">
+    <meta name="keywords" content="AI sales agents, lead qualification, CRM automation, AI texting, voice AI, lead conversion, sales automation, Salesforce integration">
     <meta name="author" content="SIMPLE Co">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://simple-landing-page-1-njh6snfdq-adam-5554s-projects.vercel.app/">
@@ -144,16 +144,16 @@
 
         /* Services Section */
         .services {
-            padding: 8rem 2rem;
+            padding: 5rem 2rem;
             background: #E8DFD0;
         }
 
         .section-title {
             text-align: center;
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 400;
             letter-spacing: -0.02em;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .service-grid {
@@ -161,15 +161,18 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .service-card {
             background: rgba(255, 255, 255, 0.4);
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 4px;
             border: 1px solid rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .service-card:hover {
@@ -178,44 +181,107 @@
         }
 
         .service-number {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #999;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             font-weight: 500;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        .service-card .subtitle {
+            color: #666;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+            min-height: 2.8em;
+        }
+
+        .service-content-section {
+            margin-bottom: 1.25rem;
+        }
+
+        .service-content-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-section-heading {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: #000;
         }
 
         .service-card p {
             color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
+            margin-bottom: 0;
+            line-height: 1.6;
+            font-size: 0.9rem;
         }
 
         .service-details {
             list-style: none;
             color: #666;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            margin: 0;
+            padding: 0;
         }
 
         .service-details li {
-            padding: 0.5rem 0;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 0.4rem 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            line-height: 1.5;
         }
 
         .service-details li:first-child {
             border-top: none;
+            padding-top: 0;
+        }
+
+        .service-details li:last-child {
+            padding-bottom: 0;
+        }
+
+        .service-channels {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+        }
+
+        .service-result-price-wrapper {
+            margin-top: auto;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .service-result-price-wrapper .section-label {
+            font-weight: 500;
+            color: #000;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-result-price-wrapper .section-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 1rem;
         }
 
         .service-price {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin-top: 1rem;
             font-weight: 500;
+            font-size: 1.1rem;
+            color: #000;
         }
 
         /* Ticker Section */
@@ -245,7 +311,7 @@
 
         /* Proof Section */
         .proof {
-            padding: 4rem 2rem;
+            padding: 2rem 2rem;
             background: #E8DFD0;
         }
 
@@ -408,7 +474,7 @@
             }
 
             .services {
-                padding: 4rem 1.5rem;
+                padding: 2rem 1.5rem;
             }
 
             .service-grid {
@@ -417,15 +483,24 @@
             }
 
             .service-card {
-                padding: 2rem 1.5rem;
+                padding: 1.5rem;
             }
 
             .service-card h3 {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
+            }
+
+            .service-section-heading {
+                font-size: 0.95rem;
+                margin-top: 1rem;
+            }
+
+            .service-price {
+                font-size: 1rem;
             }
 
             .proof {
-                padding: 3rem 1.5rem;
+                padding: 1.5rem 1.5rem;
             }
 
             .proof-grid {
@@ -796,16 +871,12 @@
     <div class="ticker-section">
         <div class="ticker">
             <span>Salesforce</span>
-            <span>HubSpot</span>
-            <span>RevOps</span>
             <span>Lead Routing</span>
             <span>Forecasting</span>
             <span>Event Triggers</span>
             <span>AI Agents</span>
             <span>Attribution</span>
             <span>Salesforce</span>
-            <span>HubSpot</span>
-            <span>RevOps</span>
             <span>Lead Routing</span>
             <span>Forecasting</span>
             <span>Async Follow-Ups</span>
@@ -818,66 +889,77 @@
         <h2 class="section-title fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">Packages</h2>
         <div class="service-grid">
             <div class="service-card fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
-                <div class="service-number">02</div>
+                <div class="service-number">01</div>
                 <h3>Texting Channel Starter Pack</h3>
-                <p style="margin-top: 1rem; font-style: italic; min-height: 3.5em;">Turn conversations into conversions with AI-powered texting.</p>
+                <p class="subtitle">Turn conversations into conversions with AI-powered texting.</p>
 
-                <h4 style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 500;">What's included:</h4>
-                <ul class="service-details">
-                    <li>Text flow audit & design for personalized outreach</li>
-                    <li>Qualifying questions integration to identify high-intent leads</li>
-                    <li>Event triggers to launch the right message at the right moment</li>
-                    <li>Notifications system to alert reps when it's time to jump in</li>
-                    <li>Testing, validation, & deployment for a fully functional AI texting engine</li>
-                </ul>
+                <div class="service-content-section">
+                    <h4 class="service-section-heading">What's included:</h4>
+                    <ul class="service-details">
+                        <li>Text flow audit & design for personalized outreach</li>
+                        <li>Qualifying questions integration to identify high-intent leads</li>
+                        <li>Event triggers to launch the right message at the right moment</li>
+                        <li>Notifications system to alert reps when it's time to jump in</li>
+                        <li>Testing, validation, & deployment for a fully functional AI texting engine</li>
+                    </ul>
+                </div>
 
-                <p style="margin-top: 1.5rem; font-weight: 500;">Channels Covered:</p>
-                <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Instagram, LinkedIn, Email, Slack, X (Twitter), Facebook, WhatsApp, Telegram</p>
+                <div class="service-content-section">
+                    <h4 class="service-section-heading">Channels:</h4>
+                    <p class="service-channels">Instagram, LinkedIn, Email, Slack, X (Twitter), Facebook, WhatsApp, Telegram</p>
+                </div>
 
-                <p style="margin-top: 1.5rem; font-weight: 500;">Result:</p>
-                <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Conversations turned into conversions with AI-powered texting that never misses a lead.</p>
-
-                <div class="service-price">from $7,997</div>
+                <div class="service-result-price-wrapper">
+                    <div class="section-label">Result:</div>
+                    <div class="section-description">Conversations turned into conversions with AI-powered texting that never misses a lead.</div>
+                    <div class="service-price">from $7,997</div>
+                </div>
             </div>
 
             <div class="service-card fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element" style="transition-delay: 0.1s">
-                <div class="service-number">03</div>
+                <div class="service-number">02</div>
                 <h3>Phone Call Channel Starter Pack</h3>
-                <p style="margin-top: 1rem; font-style: italic; min-height: 3.5em;">Your AI agent books calls, qualifies leads, and never forgets to follow up.</p>
+                <p class="subtitle">Your AI agent books calls, qualifies leads, and never forgets to follow up.</p>
 
-                <h4 style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 500;">What's included:</h4>
-                <ul class="service-details">
-                    <li>Voice Cloning (up to 2 voices) using ElevenLabs</li>
-                    <li>Call flow design & scripting</li>
-                    <li>Salesforce integration</li>
-                    <li>Event triggers & notifications for real-time updates</li>
-                    <li>Testing & deployment for high-quality, human-sounding calls</li>
-                </ul>
+                <div class="service-content-section">
+                    <h4 class="service-section-heading">What's included:</h4>
+                    <ul class="service-details">
+                        <li>Voice Cloning (up to 2 voices) using ElevenLabs</li>
+                        <li>Call flow design & scripting</li>
+                        <li>Salesforce integration</li>
+                        <li>Event triggers & notifications for real-time updates</li>
+                        <li>Testing & deployment for high-quality, human-sounding calls</li>
+                    </ul>
+                </div>
 
-                <p style="margin-top: 1.5rem; font-weight: 500;">Result:</p>
-                <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Accelerate deal flow through always-on AI voice outreach.</p>
-
-                <div class="service-price">from $11,989</div>
+                <div class="service-result-price-wrapper">
+                    <div class="section-label">Result:</div>
+                    <div class="section-description">Accelerate deal flow through always-on AI voice outreach.</div>
+                    <div class="service-price">from $11,989</div>
+                </div>
             </div>
 
             <div class="service-card fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element" style="transition-delay: 0.2s">
-                <div class="service-number">04</div>
+                <div class="service-number">03</div>
                 <h3>Qualifying Agent</h3>
-                <p style="margin-top: 1rem; font-style: italic; min-height: 3.5em;">Your always-on AI Sales agent, qualifying leads before your team steps in.</p>
+                <p class="subtitle">Your always-on AI Sales agent, qualifying leads before your team steps in.</p>
 
-                <h4 style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 500;">What's included:</h4>
-                <ul class="service-details">
-                    <li>AI hosting setup (via Blaxel)</li>
-                    <li>Context upload & prompt design: train your AI on your product and tone</li>
-                    <li>Lead scoring & qualification logic, based on your rules and priorities</li>
-                    <li>Opportunity conversion rules & real-time notifications</li>
-                    <li>Performance dashboard: track results, conversion rates, and response times</li>
-                </ul>
+                <div class="service-content-section">
+                    <h4 class="service-section-heading">What's included:</h4>
+                    <ul class="service-details">
+                        <li>AI hosting setup (via Blaxel)</li>
+                        <li>Context upload & prompt design: train your AI on your product and tone</li>
+                        <li>Lead scoring & qualification logic, based on your rules and priorities</li>
+                        <li>Opportunity conversion rules & real-time notifications</li>
+                        <li>Performance dashboard: track results, conversion rates, and response times</li>
+                    </ul>
+                </div>
 
-                <p style="margin-top: 1.5rem; font-weight: 500;">Result:</p>
-                <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Qualify, score, and route leads so your human team can focus on what they do best: closing deals.</p>
-
-                <div class="service-price">$19,995</div>
+                <div class="service-result-price-wrapper">
+                    <div class="section-label">Result:</div>
+                    <div class="section-description">Qualify, score, and route leads so your human team can focus on what they do best: closing deals.</div>
+                    <div class="service-price">from $19,995</div>
+                </div>
             </div>
         </div>
     </section>
@@ -917,9 +999,9 @@
     </section>
 
     <section class="cta-section" id="contact">
-        <h2>Build a Salesforce + AI Solution accelerates Revenue</h2>
+        <h2>Build a Salesforce + AI solution that accelerates your Revenue</h2>
         <p>In 30 minutes, we’ll map your bottlenecks and outline a CRM/AI roadmap tailored to your team.</p>
-        <a href="https://cal.com/team/simple" class="cta-button" data-cal-link="team/simple" data-cal-config='{"layout":"month_view"}'>Book Consultation</a>
+        <a href="https://cal.com/team/simple" class="cta-button" data-cal-link="team/simple" data-cal-config='{"layout":"month_view"}'>Book A Call</a>
     </section>
 
     <footer>
