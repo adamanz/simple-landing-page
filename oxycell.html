@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Oxycell Case Study | 35% of Pipeline from One Channel</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="How Oxycell influenced 35% of their pipeline ($10.1M) with automated async messaging in Salesforce. One channel, zero new hires.">
+    <meta name="keywords" content="case study, Oxycell, hyperbaric chambers, sales automation, Salesforce, WhatsApp, iMessage, lead conversion, quote follow-up">
+    <meta name="author" content="SIMPLE Co">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Oxycell Case Study | 35% of Pipeline from One Channel">
+    <meta property="og:description" content="How Oxycell influenced 35% of their pipeline with automated async messaging. One channel, zero new hires.">
+    <meta property="og:image" content="https://simple-landing-page-1-njh6snfdq-adam-5554s-projects.vercel.app/assets/icons/icon-512.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png">
+    <meta name="theme-color" content="#E8DFD0">
+
+    <!-- Alpine.js for reactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background-color: #E8DFD0;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(232, 223, 208, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-cta {
+            padding: 0.5rem 1.5rem;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* Case Study Hero */
+        .case-hero {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10rem 2rem 5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .case-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .meta-label {
+            color: #888;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .meta-value {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .meta-value a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .meta-value a:hover {
+            opacity: 0.7;
+        }
+
+        /* Client Logo */
+        .client-logo {
+            margin-bottom: 2rem;
+        }
+
+        .client-logo a {
+            display: inline-block;
+        }
+
+        .client-logo img {
+            height: 50px;
+            width: auto;
+            transition: opacity 0.2s;
+        }
+
+        .client-logo a:hover img {
+            opacity: 0.8;
+        }
+
+        .case-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .case-summary {
+            font-size: 1.25rem;
+            color: #555;
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        .case-summary-highlight {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Key Metrics */
+        .metrics-section {
+            padding: 4rem 2rem;
+            background: #000;
+            color: #fff;
+        }
+
+        .metrics-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .metric-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .metric-value {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 300;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .metric-sublabel {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.25rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 5rem 2rem;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            color: #000;
+        }
+
+        .content-section h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .content-section ol,
+        .content-section ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .content-section li {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .content-section li strong {
+            color: #1a1a1a;
+        }
+
+        /* Problem List */
+        .problem-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 2rem 0;
+        }
+
+        .problem-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .problem-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 8px;
+            height: 8px;
+            background: #d44;
+            border-radius: 50%;
+        }
+
+        /* Feature Cards */
+        .feature-cards {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            padding: 1.75rem;
+        }
+
+        .feature-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #000;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .feature-card em {
+            color: #333;
+            font-style: italic;
+        }
+
+        /* Results Tables */
+        .results-table-wrap {
+            margin: 2.5rem 0;
+            overflow-x: auto;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .results-table th,
+        .results-table td {
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .results-table th {
+            font-weight: 600;
+            color: #000;
+            background: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .results-table td {
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .results-table td:first-child {
+            font-weight: 500;
+            color: #000;
+        }
+
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .results-table .highlight-cell {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .table-footnote {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        .table-section-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+
+        /* Blockquote */
+        blockquote {
+            margin: 3rem 0;
+            padding: 2rem 2.5rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-left: 4px solid #000;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Divider */
+        .section-divider {
+            max-width: 720px;
+            margin: 0 auto;
+            border: none;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Takeaway Section */
+        .takeaway-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, #E8DFD0 0%, #DED4C3 100%);
+        }
+
+        .takeaway-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .takeaway-content h2 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .takeaway-content p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .highlight-stat {
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #000;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: #E8DFD0;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.1rem 2.5rem;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3rem;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #666;
+            font-size: 0.9rem;
+            background: #E8DFD0;
+        }
+
+        footer a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+
+            .nav-cta {
+                padding: 0.4rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .case-hero {
+                padding: 7rem 1.5rem 3rem;
+                min-height: auto;
+            }
+
+            .case-meta {
+                gap: 1rem;
+            }
+
+            .meta-item {
+                min-width: 45%;
+            }
+
+            .case-hero h1 {
+                font-size: clamp(1.75rem, 6vw, 2.5rem);
+            }
+
+            .case-summary {
+                font-size: 1.1rem;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .metric-card {
+                padding: 1rem;
+            }
+
+            .metric-value {
+                font-size: 2.5rem;
+            }
+
+            .content-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p,
+            .content-section li {
+                font-size: 1rem;
+            }
+
+            .feature-card {
+                padding: 1.25rem;
+            }
+
+            blockquote {
+                padding: 1.5rem;
+                font-size: 1.1rem;
+                margin: 2rem 0;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .takeaway-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .highlight-stat {
+                font-size: 1.15rem;
+                padding: 1.5rem;
+            }
+
+            .cta-section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #000;
+        }
+
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</head>
+<body x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="SIMPLE Co">
+        </a>
+        <a href="https://cal.com/team/simple" class="nav-cta" data-cal-link="team/simple" data-cal-config='{"layout":"month_view"}'>Book a Call</a>
+    </nav>
+
+    <!-- Cal.com Embed Script -->
+    <script>
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("preload", { calLink: "team/simple" });
+    Cal("ui", {"styles":{"branding":{"brandColor":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+
+    <section class="case-hero">
+        <a href="index.html" class="back-link fade-in" :class="{'visible': shown}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Home
+        </a>
+
+        <div class="client-logo fade-in" :class="{'visible': shown}" style="transition-delay: 0.1s">
+            <a href="https://www.oxycell.com/" target="_blank" rel="noopener">
+                <img src="assets/oxycell-logo.png" alt="Oxycell Logo">
+            </a>
+        </div>
+
+        <div class="case-meta fade-in" :class="{'visible': shown}" style="transition-delay: 0.15s">
+            <div class="meta-item">
+                <span class="meta-label">Company</span>
+                <span class="meta-value"><a href="https://www.oxycell.com/" target="_blank" rel="noopener">Oxycell</a></span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Industry</span>
+                <span class="meta-value">Medical Technology / Wellness</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Product</span>
+                <span class="meta-value">Hyperbaric Oxygen Therapy Chambers ($10k–$54k)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Location</span>
+                <span class="meta-value">Miami, FL</span>
+            </div>
+        </div>
+
+        <h1 class="fade-in" :class="{'visible': shown}" style="transition-delay: 0.2s">
+            How Oxycell Influenced 35% of Pipeline with One Channel
+        </h1>
+
+        <p class="case-summary fade-in" :class="{'visible': shown}" style="transition-delay: 0.3s">
+            Oxycell sells hyperbaric chambers to clinics, athletes, and wellness centers. The average deal is $30k+. Their sales team was drowning in leads but losing deals to slow follow-up and email fatigue.
+        </p>
+        <p class="case-summary fade-in" :class="{'visible': shown}" style="transition-delay: 0.35s">
+            We built a Salesforce-native messaging system that texts leads on iMessage and WhatsApp automatically—triggered by their behavior, not a rep's calendar.
+        </p>
+        <p class="case-summary-highlight fade-in" :class="{'visible': shown}" style="transition-delay: 0.4s">
+            One channel. No new headcount. Over a third of the business.
+        </p>
+    </section>
+
+    <section class="metrics-section">
+        <div class="metrics-grid">
+            <div class="metric-card fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
+                <div class="metric-value">35%</div>
+                <div class="metric-label">Pipeline Influenced</div>
+                <div class="metric-sublabel">$10.1M of $29.2M</div>
+            </div>
+            <div class="metric-card fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element" style="transition-delay: 0.1s">
+                <div class="metric-value">30%</div>
+                <div class="metric-label">Opportunities Touched</div>
+                <div class="metric-sublabel">193 of 647</div>
+            </div>
+            <div class="metric-card fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element" style="transition-delay: 0.2s">
+                <div class="metric-value">27%</div>
+                <div class="metric-label">Conversion Rate</div>
+                <div class="metric-sublabel">Conversation → Opportunity</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
+        <h2>The Problem</h2>
+        <p>High-ticket sales don't die at first contact. They die in the follow-up.</p>
+        <p>A prospect requests a quote for a $50,000 hyperbaric chamber. The rep sends it. Then... silence. The rep follows up once, maybe twice. Then the deal slips. Not because the prospect said no—because they got busy, the email got buried, and no one nudged them at the right moment.</p>
+        <p>Oxycell's reps knew this. They were texting leads from their personal phones, trying to stay on top of quotes. But that created three problems:</p>
+        
+        <ol class="problem-list">
+            <li><strong>No visibility.</strong> Follow-ups lived outside Salesforce. Leadership couldn't see which quotes were going cold.</li>
+            <li><strong>No scale.</strong> One rep can maybe chase 20 stalled quotes a day. Oxycell had 100+ open proposals at any time.</li>
+            <li><strong>No consistency.</strong> Some quotes got a follow-up in 3 days. Others sat for weeks.</li>
+        </ol>
+        
+        <p>The result? Quotes went stale. Deals ghosted. Revenue leaked—not from lost deals, but from deals that simply weren't followed up.</p>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
+        <h2>What We Built</h2>
+        <p>We designed an async messaging layer inside Salesforce built around one principle: <strong>never let a quote go cold.</strong></p>
+        
+        <div class="feature-cards">
+            <div class="feature-card">
+                <h4>Automated Quote Follow-Up</h4>
+                <p>When a quote is sent, the system starts watching. Day 3 with no response? A friendly text goes out from the rep's number. Day 7? Another nudge. Day 14? A different angle. The rep doesn't have to remember. The system does.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>Stalled Deal Revival</h4>
+                <p>Opportunities sitting in "Proposal Sent" for too long trigger automatic re-engagement. Not generic drip emails—personalized texts that feel like the rep typed them. Because in high-ticket sales, the difference between a closed deal and a lost one is often just <em>one more touch</em>.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>Instant Inbound Response</h4>
+                <p>New leads get a text within 60 seconds of form submission. Not from a short code—from a real number that shows up blue on their iPhone. Speed to lead matters, but speed to <em>follow-up</em> matters more.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>Full Attribution</h4>
+                <p>Every message—sent and received—logs to Salesforce. We can trace a closed deal back to the exact text that revived it after the quote went cold.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
+        <h2>The Numbers</h2>
+        
+        <div class="results-table-wrap">
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Texted</th>
+                        <th>Total (Org)</th>
+                        <th>% Influenced</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pipeline Value</td>
+                        <td>$10.1M</td>
+                        <td>$29.2M</td>
+                        <td class="highlight-cell">35%</td>
+                    </tr>
+                    <tr>
+                        <td>Opportunities</td>
+                        <td>193</td>
+                        <td>647</td>
+                        <td class="highlight-cell">30%</td>
+                    </tr>
+                    <tr>
+                        <td>Closed Revenue</td>
+                        <td>$416k</td>
+                        <td>$8.5M</td>
+                        <td>5%*</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="table-footnote">*Closed revenue % is lower because the system is new—most influenced deals are still in-flight.</p>
+
+        <h3 class="table-section-title">Conversion & Engagement</h3>
+        <div class="results-table-wrap">
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Conversation → Opportunity</td>
+                        <td class="highlight-cell">27%</td>
+                    </tr>
+                    <tr>
+                        <td>Response Rate</td>
+                        <td class="highlight-cell">13% (vs. 3-5% industry avg)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <p>The story isn't just "$10M in pipeline." It's that <strong>a single async channel now influences over a third of the entire business</strong>—and it runs automatically.</p>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
+        <h2>Why It Works</h2>
+        <p>In high-ticket sales, most deals aren't lost to competitors. They're lost to inertia.</p>
+        <p>The prospect liked the product. The quote made sense. But life happened—they got busy, the email got buried, and by the time they resurfaced, they'd moved on or found someone else who followed up first.</p>
+        <p>The automation solves this. It handles the follow-up, the nudge, the "just checking in" that reps mean to send but forget. Every quote gets chased. Every stalled deal gets a second chance. The rep steps in when it matters—when the prospect replies and is ready to close.</p>
+        
+    </section>
+
+    <section class="takeaway-section">
+        <div class="takeaway-content fade-in" x-data="scrollAnimation()" x-init="observe()" x-ref="element">
+            <h2>The Takeaway</h2>
+            <p>Oxycell didn't need more reps. They needed a system that matched their speed to their leads' expectations.</p>
+            <p>By moving async messaging into Salesforce—with real attribution, real automation, and real phone numbers—they turned a leaky funnel into a machine.</p>
+            
+            <div class="highlight-stat">
+                35% of pipeline. 30% of opportunities.<br>One channel. Zero new hires.
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to build your own sales machine?</h2>
+        <p>Let's map your bottlenecks and outline a CRM/AI roadmap tailored to your team.</p>
+        <a href="https://cal.com/team/simple" class="cta-button" data-cal-link="team/simple" data-cal-config='{"layout":"month_view"}'>Book A Call</a>
+    </section>
+
+    <footer>
+        <a href="index.html">Home</a>
+        <a href="https://cal.com/team/simple">Contact</a>
+        <p style="margin-top: 1rem;">&copy; 2025 Collective Consopusness LLC. Custom AI GTM CRM deployments for your funnel.</p>
+    </footer>
+
+    <script>
+        function scrollAnimation() {
+            return {
+                observe() {
+                    const observer = new IntersectionObserver(
+                        (entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add('visible');
+                                    observer.unobserve(entry.target);
+                                }
+                            });
+                        },
+                        { threshold: 0.1, rootMargin: '50px' }
+                    );
+                    observer.observe(this.$refs.element);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
